@@ -7,4 +7,6 @@ class LoginLocators:
 
 class InventoryLocators:
     INVENTORY_ITEM_LINK= (By.XPATH, "//div[@class= 'inventory_item_name ']")
-    ADD_CART_BUTTON = (By.XPATH, "//button[@class= 'btn btn_primary btn_small btn_inventory']")
+    ADD_CART_BUTTON = (By.XPATH, "//button[contains(@id,'add-to-cart')]")
+    REMOVE_CART_BUTTON = (By.XPATH, "//button[contains(@id,'remove')]")
+    BACK_BUTTON = (By.XPATH, "//button[@id= 'back-to-products']")
