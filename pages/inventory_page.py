@@ -2,18 +2,16 @@ import time
 import logging
 
 from pages.base_page import BasePage
-from config.settings import Buttons
+from config.locators import InventoryLocators
 
 from selenium.webdriver.support import expected_conditions as EC
-
-from config.settings import InventoryItem
 
 class InventoryPage(BasePage):
 
     def clickInventory(self):
-        self.wait.until(EC.element_to_be_clickable(Buttons.BUTTON_INVENTORY_ITEM)).click()
+        self.wait.until(EC.element_to_be_clickable(InventoryLocators.INVENTORY_ITEM_LINK)).click()
         time.sleep(5)
 
-        self.wait.until(EC.element_to_be_clickable(Buttons.BUTTON_ADD_CART)).click()
+        self.wait.until(EC.element_to_be_clickable(InventoryLocators.ADD_CART_BUTTON)).click()
         logging.info("button add to cart clicked")
         
