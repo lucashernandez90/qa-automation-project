@@ -4,7 +4,6 @@ import logging
 from pages.base_page import BasePage
 from config.locators import InventoryLocators
 from selenium.webdriver.common.by import By
-
 from selenium.webdriver.support import expected_conditions as EC
 
 class InventoryPage(BasePage):
@@ -18,6 +17,7 @@ class InventoryPage(BasePage):
             button.click()
 
         logging.info(f"{len(buttons)} products add to cart")
+        time.sleep(5)
 
 
     def remove_all_products(self):
@@ -29,6 +29,7 @@ class InventoryPage(BasePage):
             button.click()
 
         logging.info(f"{len(buttons)} products removed")
+        time.sleep(5)
 
 
     def add_products_by_name(self, product_name):
@@ -36,8 +37,8 @@ class InventoryPage(BasePage):
         self.wait.until(EC.element_to_be_clickable(xpath)).click()
 
         logging.info(f"Added {product_name} to cart")
+        time.sleep(5)
         
-
 
     def clickInventory(self):
         self.wait.until(EC.element_to_be_clickable(InventoryLocators.INVENTORY_ITEM_LINK)).click()
