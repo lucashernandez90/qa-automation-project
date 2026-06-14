@@ -7,6 +7,10 @@ class LoginData:
     USERNAME = "standard_user"
     PASSWORD = "secret_sauce"
 
+    NAME = "Lucas"
+    LAST_NAME = "Hernandez"
+    ZIP_CODE = "042490-12"
+
     
 
 
