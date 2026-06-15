@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class CartPage(BasePage):
 
-    def clickCart(self):
+    def click_Cart(self):
 
         self.wait.until(EC.element_to_be_clickable(CartLocators.CART_BUTTON)).click()
         items = self.driver.find_elements(*CartLocators.CAR_ITEMS)
@@ -34,14 +34,14 @@ class CartPage(BasePage):
         
         raise Exception("No product found in cart")
 
-    def fillName(self):
+    def fill_Name(self):
         self.wait.until(EC.visibility_of_element_located(CartLocators.NAME_INPUT)).send_keys(LoginData.NAME)
         self.wait.until(EC.visibility_of_element_located(CartLocators.LAST_NAME_INPUT)).send_keys(LoginData.LAST_NAME)
         self.wait.until(EC.visibility_of_element_located(CartLocators.ZIP_CODE_INPUT)).send_keys(LoginData.ZIP_CODE)
         logging.info("name, last name and zip code filled")
         time.sleep(5)
 
-    def finishCart(self):
+    def finish_Cart(self):
         self.wait.until(EC.visibility_of_element_located(CartLocators.CONTINUE_BUTTON)).click()
         logging.info("continue button clicked")
         time.sleep(5)
@@ -54,7 +54,7 @@ class CartPage(BasePage):
         logging.info("back home button clicked")
         time.sleep(5)
 
-    def cycleCart(self):
-        self.clickCart()
-        self.fillName()
-        self.finishCart()
+    def cycle_Cart(self):
+        self.click_Cart()
+        self.fill_Name()
+        self.finish_Cart()

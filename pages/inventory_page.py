@@ -40,7 +40,7 @@ class InventoryPage(BasePage):
         time.sleep(5)
         
 
-    def clickInventory(self):
+    def click_Inventory(self):
         self.wait.until(EC.element_to_be_clickable(InventoryLocators.INVENTORY_ITEM_LINK)).click()
         logging.info("linked of the product cliked")
         time.sleep(5)
@@ -53,7 +53,7 @@ class InventoryPage(BasePage):
         logging.info("button back clicked")
         time.sleep(5)
 
-    def filterButton(self):
+    def filter_Button(self):
         self.wait.until(EC.element_to_be_clickable(InventoryLocators.FILTER_BUTTTON)).click()
         logging.info("filter button clicked")
         time.sleep(5)
@@ -62,9 +62,9 @@ class InventoryPage(BasePage):
         logging.info("option button za clicked")
         time.sleep(5)
 
-    def cycleInventory(self):
-        self.clickInventory()
-        self.filterButton()
+    def cycle_Inventory(self):
+        self.click_Inventory()
+        self.filter_Button()
         self.add_all_products()
         self.remove_all_products()
 
