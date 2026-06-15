@@ -4,6 +4,7 @@ class LoginLocators:
     USERNAME_INPUT = (By.XPATH, "//input[@placeholder= 'Username']")
     PASSWORD_INPUT = (By.XPATH, "//input[@placeholder= 'Password']")
     LOGIN_BUTTON = (By.XPATH, "//input[@id= 'login-button']")
+    ERROR_CONTAINER = (By.XPATH, "//h3[@data-test= 'error']")
 
 class InventoryLocators:
     INVENTORY_ITEM_LINK = (By.XPATH, "//div[@class= 'inventory_item_name ']")

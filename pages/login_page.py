@@ -13,7 +13,6 @@ class LoginPage(BasePage):
         self.driver.get(LoginData.URL_SITE)
     
     def login(self, username=LoginData.USERNAME, password=LoginData.PASSWORD):
-        # REMOVIDOS OS ASTERISCOS DAQUI DE DENTRO:
         self.wait.until(EC.visibility_of_element_located(LoginLocators.USERNAME_INPUT)).send_keys(username)
         self.wait.until(EC.visibility_of_element_located(LoginLocators.PASSWORD_INPUT)).send_keys(password)
         logging.info("username and password filled")
@@ -28,3 +27,7 @@ class LoginPage(BasePage):
     def cycle_Login(self):
         self.open()
         self.login()
+
+    def get_error_message(self):
+        elemento_erro = self.wait.until(EC.visibility_of_element_located(LoginLocators.ERROR_CONTAINER))
+        return elemento_erro.text
