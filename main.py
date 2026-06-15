@@ -15,11 +15,6 @@ cart_page = CartPage(driver)
 login_page.open()
 login_page.login()
 
-inventory_page.clickInventory()
-inventory_page.add_all_products()
-inventory_page.remove_all_products()
-inventory_page.add_products_by_name("Sauce Labs Bike Light")
-inventory_page.add_products_by_name("Test.allTheThings() T-Shirt (Red)")
-inventory_page.add_products_by_name("Sauce Labs Bolt T-Shirt")
+inventory_page.cycleInventory()
 
 cart_page.cycleCart()

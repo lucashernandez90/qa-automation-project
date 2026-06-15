@@ -42,6 +42,7 @@ class InventoryPage(BasePage):
 
     def clickInventory(self):
         self.wait.until(EC.element_to_be_clickable(InventoryLocators.INVENTORY_ITEM_LINK)).click()
+        logging.info("linked of the product cliked")
         time.sleep(5)
 
         self.wait.until(EC.element_to_be_clickable(InventoryLocators.ADD_CART_BUTTON)).click()
@@ -51,3 +52,22 @@ class InventoryPage(BasePage):
         self.wait.until(EC.element_to_be_clickable(InventoryLocators.BACK_BUTTON)).click()
         logging.info("button back clicked")
         time.sleep(5)
+
+    def filterButton(self):
+        self.wait.until(EC.element_to_be_clickable(InventoryLocators.FILTER_BUTTTON)).click()
+        logging.info("filter button clicked")
+        time.sleep(5)
+
+        self.wait.until(EC.element_to_be_clickable(InventoryLocators.OPTION_FILTER_ZA)).click()
+        logging.info("option button za clicked")
+        time.sleep(5)
+
+    def cycleInventory(self):
+        self.clickInventory()
+        self.filterButton()
+        self.add_all_products()
+        self.remove_all_products()
+
+        self.add_products_by_name("Sauce Labs Bike Light")
+        self.add_products_by_name("Test.allTheThings() T-Shirt (Red)")
+        self.add_products_by_name("Sauce Labs Bolt T-Shirt")

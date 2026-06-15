@@ -10,6 +10,8 @@ class InventoryLocators:
     ADD_CART_BUTTON = (By.XPATH, "//button[contains(@id,'add-to-cart')]")
     REMOVE_CART_BUTTON = (By.XPATH, "//button[contains(@id,'remove')]")
     BACK_BUTTON = (By.XPATH, "//button[@id= 'back-to-products']")
+    FILTER_BUTTTON = (By.XPATH, "//span[@class= 'select_container']")
+    OPTION_FILTER_ZA = (By.XPATH, "//option[@value = 'za']")
 
 class CartLocators:
     CART_BUTTON = (By.XPATH, "//a[@class= 'shopping_cart_link']")
