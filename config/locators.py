@@ -21,6 +21,8 @@ class CartLocators:
     CONTINUE_SHOPPING_BUTTON = (By.XPATH, "//button[@id= 'continue-shopping']")
     BACK_HOME_BUTTON = (By.XPATH, "//button[@id= 'back-to-products']")
 
+    CAR_ITEMS = (By.XPATH, "//div[@class= 'cart_item']")
+
     NAME_INPUT = (By.XPATH, "//input[@placeholder= 'First Name']")
     LAST_NAME_INPUT = (By.XPATH, "//input[@placeholder= 'Last Name']")
     ZIP_CODE_INPUT = (By.XPATH, "//input[@placeholder= 'Zip/Postal Code']")
