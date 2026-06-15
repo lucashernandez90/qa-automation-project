@@ -24,3 +24,7 @@ class LoginPage(BasePage):
 
         self.wait.until(EC.element_to_be_clickable(LoginLocators.LOGIN_BUTTON)).click()
         logging.info("login button clicked")
+
+    def cycleLogin(self):
+        self.open()
+        self.login()

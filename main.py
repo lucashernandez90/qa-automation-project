@@ -12,8 +12,7 @@ login_page = LoginPage(driver)
 inventory_page = InventoryPage(driver)
 cart_page = CartPage(driver)
 
-login_page.open()
-login_page.login()
+login_page.cycleLogin()
 
 inventory_page.cycleInventory()
 
