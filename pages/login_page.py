@@ -24,6 +24,9 @@ class LoginPage(BasePage):
 
         self.wait.until(EC.element_to_be_clickable(LoginLocators.LOGIN_BUTTON)).click()
         logging.info("login button clicked")
+    
+    def is_logged(self):
+        return "inventory" in self.driver.current_url
 
     def cycleLogin(self):
         self.open()

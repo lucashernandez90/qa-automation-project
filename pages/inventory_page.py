@@ -71,5 +71,3 @@ class InventoryPage(BasePage):
         self.add_products_by_name("Sauce Labs Bike Light")
         self.add_products_by_name("Test.allTheThings() T-Shirt (Red)")
         self.add_products_by_name("Sauce Labs Bolt T-Shirt")
-
-        self.remove_all_products()
