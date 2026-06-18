@@ -1,11 +1,11 @@
 import pytest
 from pages.login_page import LoginPage
 
-USUARIO_VALIDO = "standard_user"
-SENHA_VALIDA = "secret_sauce"
+VALID_USER = "standard_user"
+VALID_PASSWORD = "secret_sauce"
 
-MSG_ERRO_LOGIN_INVALIDO = "Username and password do not match any user in this service"
-MSG_ERRO_VAZIO = "Username is required"
+MSG_ERRO_LOGIN_INVALID = "Username and password do not match any user in this service"
+EMPTY_MSG_ERRO = "Username is required"
 
 @pytest.fixture
 def login_page(driver):
@@ -14,20 +14,20 @@ def login_page(driver):
     return page
 
 def test_login_success(login_page):
-    login_page.login(USUARIO_VALIDO, SENHA_VALIDA)
+    login_page.login(VALID_USER, VALID_PASSWORD)
     assert login_page.is_logged()
 
 
 def test_login_invalid_username(login_page):
-    login_page.login("Lucas", SENHA_VALIDA)
-    assert MSG_ERRO_LOGIN_INVALIDO in login_page.get_error_message()
+    login_page.login("Lucas", VALID_PASSWORD)
+    assert MSG_ERRO_LOGIN_INVALID in login_page.get_error_message()
 
 
 def test_login_invalid_password(login_page):
-    login_page.login(USUARIO_VALIDO, "senha_errada")
-    assert MSG_ERRO_LOGIN_INVALIDO in login_page.get_error_message()
+    login_page.login(VALID_USER, "senha_errada")
+    assert MSG_ERRO_LOGIN_INVALID in login_page.get_error_message()
 
 
 def test_login_empty_fields(login_page):
     login_page.login("", "")
-    assert MSG_ERRO_VAZIO in login_page.get_error_message()
+    assert EMPTY_MSG_ERRO in login_page.get_error_message()
