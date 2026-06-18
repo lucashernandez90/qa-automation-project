@@ -62,6 +62,22 @@ class InventoryPage(BasePage):
         logging.info("option button za clicked")
         time.sleep(5)
 
+    def get_cart_badge_count(self):
+
+        CART_BADGE = (By.CLASS_NAME, "shopping_cart_badge")
+        
+        try:
+            text_counter = self.driver.find_element(*CART_BADGE).text
+            return int(text_counter) 
+        except:
+            return 0
+
+    def get_first_product_name(self):
+
+        PRODUCT_NAME = (By.CLASS_NAME, "inventory_item_name")
+        first_item = self.wait.until(EC.visibility_of_element_located(PRODUCT_NAME))
+        return first_item.text
+
     def cycle_Inventory(self):
         self.click_Inventory()
         self.filter_Button()

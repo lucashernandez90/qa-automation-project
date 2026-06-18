@@ -24,7 +24,7 @@ class LoginPage(BasePage):
     def is_logged(self):
         return "inventory" in self.driver.current_url
 
-    def cycle_Login(self):
+    def cycle_login(self):
         self.open()
         self.login()
 
